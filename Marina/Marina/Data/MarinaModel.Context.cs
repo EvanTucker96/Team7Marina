@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Marina
+namespace Marina.Data
 {
     using System;
     using System.Data.Entity;

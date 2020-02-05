@@ -7,24 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Marina
+namespace Marina.Data
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Customer
+    public partial class Lease
     {
-        public Customer()
-        {
-            this.Leases = new HashSet<Lease>();
-        }
-    
         public int ID { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Phone { get; set; }
-        public string City { get; set; }
+        public int SlipID { get; set; }
+        public int CustomerID { get; set; }
     
-        public virtual ICollection<Lease> Leases { get; set; }
+        public virtual Customer Customer { get; set; }
+        public virtual Slip Slip { get; set; }
     }
 }

@@ -7,24 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Marina
+namespace Marina.Data
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Slip
+    public partial class Dock
     {
-        public Slip()
+        public Dock()
         {
-            this.Leases = new HashSet<Lease>();
+            this.Slips = new HashSet<Slip>();
         }
     
         public int ID { get; set; }
-        public int Width { get; set; }
-        public int Length { get; set; }
-        public int DockID { get; set; }
+        public string Name { get; set; }
+        public bool WaterService { get; set; }
+        public bool ElectricalService { get; set; }
     
-        public virtual Dock Dock { get; set; }
-        public virtual ICollection<Lease> Leases { get; set; }
+        public virtual ICollection<Slip> Slips { get; set; }
     }
 }
