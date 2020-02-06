@@ -24,6 +24,7 @@ namespace Marina.Data
         public string LastName { get; set; }
         public string Phone { get; set; }
         public string City { get; set; }
+        public string Passwords { get; set; }
     
         public virtual ICollection<Lease> Leases { get; set; }
     }
