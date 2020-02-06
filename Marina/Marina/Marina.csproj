@@ -91,6 +91,7 @@
       <DependentUpon>MarinaModel.edmx</DependentUpon>
       <LastGenOutput>MarinaModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Client.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Image\banner.jpg" />
     <Content Include="Scripts\esm\popper-utils.js" />
@@ -220,6 +221,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MarinaModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Client.aspx.cs">
+      <DependentUpon>Client.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client.aspx.designer.cs">
+      <DependentUpon>Client.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
