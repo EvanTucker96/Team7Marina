@@ -1,0 +1,12 @@
+html {
+    scroll-behavior: smooth;
+}
+.navbar-brand:hover {
+    text-decoration: underline;
+}
+.navbar-spacer {
+    min-height: 88px;
+}
+.anchor-thing {
+    font-size: 96px;
+}
