@@ -22,10 +22,10 @@
                 <asp:TextBox ID="txtLength" runat="server"></asp:TextBox>
                 <br />
                 <asp:Label ID="Label3" runat="server" Text="Water Service: "></asp:Label>
-                <asp:CheckBox ID="water" runat="server" />
+                <asp:CheckBox ID="water" runat="server" onclick="return false;" />
                 <br />
                 <asp:Label ID="Label6" runat="server" Text="Electrical Service: "></asp:Label>
-                <asp:CheckBox ID="electric" runat="server" />
+                <asp:CheckBox ID="electric" runat="server" onclick="return false;" />
                 <br />
             </form>
         </div>
