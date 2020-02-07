@@ -47,13 +47,13 @@ namespace Marina
 
 
 
-                //context.Leases.Add(new Lease()
-                //{
-                //    CustomerID = user.ID,
-                //    SlipID = slip.ID
-                //});
+                context.Leases.Add(new Lease()
+                {
+                    CustomerID = user.ID,
+                    SlipID = slip.ID
+                });
 
-                //context.SaveChanges();
+                context.SaveChanges();
             }
         }
     }

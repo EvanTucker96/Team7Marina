@@ -35,21 +35,35 @@ namespace Marina
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            var customer = new Marina.Data.Customer();
+            Customer customer;
+            string pass;
+            string name;
+            int id;
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());
             
+         
+
             try
             {
                 bool result = false;
 
-
-                string pass;
-                string name = TextBox1.Text;
-                int id = customer.ID;
+                name = TextBox1.Text;
 
                 var x = HashPassword(TextBox2.Text);
 
                 pass = Encoding.UTF8.GetString(x, 0, x.Length);
+
+                using (var context = new MarinaData())
+                {
+                    var query = from c
+                                in context.Customers
+                                where c.FirstName == name
+                                && c.Passwords == pass
+                                select c;
+
+                    customer = query.First();
+                    id = customer.ID;
+                }
 
                 con.Open();
 
