@@ -18,26 +18,12 @@ namespace Marina
         
         protected void Page_Load(object sender, EventArgs e)
         {
-           // lblFailed.Visible = false;
+
         }
 
         protected void LoginButton_Click(object sender, EventArgs e)
         {
-           /* var name = (FindControl("tbFirstName") as TextBox).Text;
 
-            Session["FirstName"] = name;
-            bool result = false;
-            if (Session["FirstName"] != null)
-            {
-                result = true;
-            }
-            else
-            {
-
-                lblFailed.Visible = true;
-                Session["IsAuthenticated"] = result;
-            }
-            */
         }
         public static byte[] HashPassword(string password)
         {

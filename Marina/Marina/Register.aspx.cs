@@ -29,12 +29,13 @@ namespace Marina
         {
             var customer = (Marina.Data.Customer)e.Entity;
             var x = HashPassword(customer.Passwords);
-            customer.Passwords = Encoding.UTF8.GetString(x, 0, x.Length);        
+            customer.Passwords = Encoding.UTF8.GetString(x, 0, x.Length);
+            Session["Customer"] = customer;
         }
 
         protected void EntityDataSource1_Inserted(object sender, EntityDataSourceChangedEventArgs e)
         {
-            var customer = (Marina.Data.Customer)e.Entity;
+            var customer = (Customer)Session["Customer"];
             var name = (FormView1.FindControl("FirstNameTextBox") as TextBox).Text;
             
 
