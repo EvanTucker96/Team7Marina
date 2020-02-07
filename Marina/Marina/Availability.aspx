@@ -20,6 +20,7 @@
                 <br />
                 <asp:Label ID="Label3" runat="server" Text="Dock ID: "></asp:Label>
                 <asp:TextBox ID="txtDockID" runat="server"></asp:TextBox>
+                <br />
             </form>
         </div>
     </div>
