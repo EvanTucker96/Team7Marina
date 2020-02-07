@@ -18,6 +18,7 @@ namespace Marina
         string temp; // used to get the id value for searching slip objects
 
         Slip slippy; // slip object used to display data in the textboxes when an id is selected
+        Dock dock;
 
         // fill the list of slips with entity, populate the drop down, and fill the data for first id by default
         protected void Page_Load(object sender, EventArgs e)
@@ -26,11 +27,13 @@ namespace Marina
             PopulateDropDown();
             
             // get the first slip ID item and fill the text boxes with data
-            temp = DropDownList1.SelectedItem.ToString();
-            slippy = marina.Slips.Find(Convert.ToInt32(temp));
+            dock = marina.Docks.Find(1);
+            slippy = marina.Slips.Find(1);
+            txtName.Text = dock.Name.ToString();
             txtWidth.Text = slippy.Width.ToString();
             txtLength.Text = slippy.Length.ToString();
-            txtDockID.Text = slippy.DockID.ToString();
+            water.Checked = dock.WaterService;
+            electric.Checked = dock.ElectricalService;
         }
 
         // fill the drop down with all of the slip id's using the list of slips
@@ -43,11 +46,15 @@ namespace Marina
         // when a selected index is changed get the slippy object for the slip id chosen and display
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             temp = DropDownList1.SelectedItem.ToString();
             slippy = marina.Slips.Find(Convert.ToInt32(temp));
+            dock = marina.Docks.Find(slippy.DockID);            
+            txtName.Text = dock.Name.ToString();
             txtWidth.Text = slippy.Width.ToString();
             txtLength.Text = slippy.Length.ToString();
-            txtDockID.Text = slippy.DockID.ToString();
+            water.Checked = dock.WaterService;
+            electric.Checked = dock.ElectricalService;
         }
     }
 }
