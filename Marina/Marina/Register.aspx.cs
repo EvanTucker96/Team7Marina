@@ -21,7 +21,7 @@ namespace Marina
         }
         public static byte[] HashPassword(string password)
         {
-            var provider = new SHA256CryptoServiceProvider();
+            var provider = new SHA1CryptoServiceProvider();
             var encoding = new UnicodeEncoding();
             return provider.ComputeHash(encoding.GetBytes(password));
         }
@@ -38,13 +38,13 @@ namespace Marina
             var name = (FormView1.FindControl("FirstNameTextBox") as TextBox).Text;
             
 
-            Session[customer.FirstName] = name;
+            Session["FirstName"] = name;
             if (Session[customer.FirstName] == null)
             {
                 Response.Redirect("Login.aspx");
             }else
             {
-
+                Session["IsAuthenticated"] = true;
             }
                 
             

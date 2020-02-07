@@ -5,21 +5,71 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
     <div class="d-flex">
         <div class="m-auto">
-            <div class="form-row">
-                <label for="uname"><b>First Name: </b></label>
-                <input type="text" class="form-control" placeholder="Enter Username" name="uname" required>
-            </div>
-            <br />
-            <div class="form-row">
-                <label for="psw"><b>Password: </b></label>
-                <input type="password" class="form-control" placeholder="Enter Password" name="psw" required>
-            </div>
-            <br />
-            <button class="my-2 btn btn-secondary" type="submit">Login</button>
-            <label>
-                <input type="checkbox" checked="checked" name="remember">
-                Remember me
-            </label>
+            <form id="form1" runat="server">
+                <div>
+
+                    <table class="auto-style1">
+                        <tr>
+                            <td colspan="6" style="text-align: center; vertical-align: top">
+                                <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="XX-Large" Font-Underline="True" Text="Log In "></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="text-align: center">
+                                <asp:Label ID="Label2" runat="server" Font-Size="X-Large" Text="First Name: "></asp:Label>
+                            </td>
+                            <td style="text-align: center">
+                                <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" Font-Size="X-Large"></asp:TextBox>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="text-align: center">
+                                <asp:Label ID="Label3" runat="server" Font-Size="X-Large" Text="Password: "></asp:Label>
+                            </td>
+                            <td style="text-align: center">
+                                <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" Font-Size="X-Large" TextMode="Password"></asp:TextBox>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align: center">
+                                <asp:Button CssClass="btn btn-secondary" ID="Button1" runat="server" BorderStyle="None" Font-Size="X-Large" OnClick="Button1_Click" Text="Log In" />
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <asp:Label ID="Label4" runat="server" Font-Size="X-Large"></asp:Label>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+
+                </div>
+            </form>
         </div>
     </div>
 </asp:Content>
