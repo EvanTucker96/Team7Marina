@@ -1,9 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Security.Cryptography;
+using System.Text;
+using Marina.Data;
+
+
 
 namespace Marina
 {
@@ -12,6 +18,36 @@ namespace Marina
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+        public static byte[] HashPassword(string password)
+        {
+            var provider = new SHA256CryptoServiceProvider();
+            var encoding = new UnicodeEncoding();
+            return provider.ComputeHash(encoding.GetBytes(password));
+        }
+        protected void EntityDataSource1_Inserting(object sender, EntityDataSourceChangingEventArgs e)
+        {
+            var customer = (Marina.Data.Customer)e.Entity;
+            var x = HashPassword(customer.Passwords);
+            customer.Passwords = Encoding.UTF8.GetString(x, 0, x.Length);        
+        }
+
+        protected void EntityDataSource1_Inserted(object sender, EntityDataSourceChangedEventArgs e)
+        {
+            var customer = (Marina.Data.Customer)e.Entity;
+            var name = (FormView1.FindControl("FirstNameTextBox") as TextBox).Text;
+            
+
+            Session[customer.FirstName] = name;
+            if (Session[customer.FirstName] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }else
+            {
+
+            }
+                
+            
         }
     }
 }

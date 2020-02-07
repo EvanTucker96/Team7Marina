@@ -32,13 +32,14 @@
                 <asp:TextBox CssClass="form-control" ID="PasswordTextBox" required="true" TextMode="Password" runat="server" Text='<%# Bind("Passwords") %>' />
                 <asp:RequiredFieldValidator runat="server" ID="reqPassword" ControlToValidate="PasswordTextBox" ErrorMessage="Please enter a password" Display="None" />
                         <br />
+                        <br />
 
                         <asp:LinkButton CssClass="my-2 btn btn-secondary" ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Submit" />
                         &nbsp;<asp:LinkButton CssClass="my-2 btn btn-primary" ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
                     </InsertItemTemplate>
                 </asp:FormView>
-                <asp:EntityDataSource ID="EntityDataSource1" runat="server" ConnectionString="name=MarinaData" DefaultContainerName="MarinaData" EnableFlattening="False" EntitySetName="Customers" EnableInsert="True" EntityTypeFilter="Customer">
-                </asp:EntityDataSource>
+                <asp:EntityDataSource ID="EntityDataSource1" runat="server" ConnectionString="name=MarinaData" DefaultContainerName="MarinaData" EnableFlattening="False" EntitySetName="Customers" EnableInsert="True" EntityTypeFilter="Customer" OnInserted="EntityDataSource1_Inserted" OnInserting="EntityDataSource1_Inserting" >
+                    </asp:EntityDataSource>
             </form>
         </div>
     </div>
