@@ -12,14 +12,20 @@
                     OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" AutoPostBack="True">
                 </asp:DropDownList>
                 <br />
+                <asp:Label ID="Label5" runat="server" Text="Dock Name: "></asp:Label>
+                <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+                <br />
                 <asp:Label ID="Label1" runat="server" Text="Width: "></asp:Label>
                 <asp:TextBox ID="txtWidth" runat="server"></asp:TextBox>
                 <br />
                 <asp:Label ID="Label2" runat="server" Text="Length: "></asp:Label>
                 <asp:TextBox ID="txtLength" runat="server"></asp:TextBox>
                 <br />
-                <asp:Label ID="Label3" runat="server" Text="Dock ID: "></asp:Label>
-                <asp:TextBox ID="txtDockID" runat="server"></asp:TextBox>
+                <asp:Label ID="Label3" runat="server" Text="Water Service: "></asp:Label>
+                <asp:CheckBox ID="water" runat="server" />
+                <br />
+                <asp:Label ID="Label6" runat="server" Text="Electrical Service: "></asp:Label>
+                <asp:CheckBox ID="electric" runat="server" />
                 <br />
             </form>
         </div>
