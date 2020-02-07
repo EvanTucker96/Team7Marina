@@ -8,13 +8,14 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Security.Cryptography;
 using System.Text;
+using Marina.Data;
 
 namespace Marina
 {
 
     public partial class Login : System.Web.UI.Page
     {
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
            // lblFailed.Visible = false;
@@ -48,6 +49,7 @@ namespace Marina
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            var customer = new Marina.Data.Customer();
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());
             
             try
@@ -57,6 +59,7 @@ namespace Marina
 
                 string pass;
                 string name = TextBox1.Text;
+                int id = customer.ID;
 
                 var x = HashPassword(TextBox2.Text);
 
@@ -73,6 +76,7 @@ namespace Marina
                 {
                     Label4.Text = "Login Sucessful";
                     Session["FirstName"] = name;
+                    Session["ID"] = id;
                     result = true;
                     Session["IsAuthenticated"] = result;
                     Response.Redirect("Default.aspx");
