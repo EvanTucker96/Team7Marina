@@ -15,6 +15,7 @@ namespace MarinaRemake
 
         List<Slip> listSlips; // list of slip objects for accessing the data
         List<Lease> listLeases; // list of lease objects to create the slipIDsBooked list
+        List<Dock> listDocks; // list of dock objects to create the dock services drop down
         List<int> slipIDsBooked = new List<int>(); // list of slipIDs that are booked
 
         string temp; // used to get the id value for searching slip objects
@@ -29,12 +30,14 @@ namespace MarinaRemake
 
             listSlips = marina.Slips.ToList();
             listLeases = marina.Leases.ToList();
+            listDocks = marina.Docks.ToList();
+
             foreach (Lease l in listLeases)
             {
                 slipIDsBooked.Add(l.SlipID);
             }
 
-            PopulateDropDown();
+            PopulateSlipIDDropDown();
 
             // get the first slip ID item and fill the text boxes with data
             dock = marina.Docks.Find(1);
@@ -44,21 +47,35 @@ namespace MarinaRemake
             txtLength.Text = slippy.Length.ToString();
             water.Checked = dock.WaterService;
             electric.Checked = dock.ElectricalService;
+
+            txtDockName2.Text = dock.Name.ToString();
+            water2.Checked = dock.WaterService;
+            electric2.Checked = dock.ElectricalService;
         }
 
         // fill the drop down with all of the slip id's that are available
         // the items that are available are the ones that do not exist in the lease.SlipID column
-        private void PopulateDropDown()
+        private void PopulateSlipIDDropDown()
         {
+            RemoveBooked();
             foreach (Slip s in listSlips)
             {
-                foreach (int i in slipIDsBooked)
+                DropDownList1.Items.Add(s.ID.ToString());
+            }
+        }
+
+        // for every booked id loop through the list of slips and remove that id
+        private void RemoveBooked()
+        {
+            foreach(int i in slipIDsBooked)
+            {
+                for(int increment = 0; increment < listSlips.Count(); increment++)
                 {
-                    if (s.ID != i)
+                    if (i == listSlips[increment].ID)
                     {
-                        DropDownList1.Items.Add(s.ID.ToString());
+                        listSlips.RemoveAt(increment);
                     }
-                }
+                }               
             }
         }
 
@@ -69,15 +86,13 @@ namespace MarinaRemake
             slippy = marina.Slips.Find(Convert.ToInt32(temp));
             dock = marina.Docks.Find(slippy.DockID);
             txtName.Text = dock.Name.ToString();
+            txtDockName2.Text = dock.Name.ToString();
             txtWidth.Text = slippy.Width.ToString();
             txtLength.Text = slippy.Length.ToString();
             water.Checked = dock.WaterService;
             electric.Checked = dock.ElectricalService;
-        }
-
-        protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            water2.Checked = dock.WaterService;
+            electric2.Checked = dock.ElectricalService;
         }
     }
 }
