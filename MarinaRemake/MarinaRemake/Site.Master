@@ -1,0 +1,108 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MarinaRemake.Views.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <meta name="viewport" content="width=device-width, intial-scale=1" />
+
+    <!-- CSS Bundle -->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/de5d301e19.js"></script>
+    <link href="Content/Site.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <form id="test" runat="server">
+
+        <!-- Navigation -->
+        <header id="nav-wrapper">
+            <nav class="navbar navbar-expand-md navbar-light bg-light py-4 fixed-top" style="z-index: 1;">
+                <a class="navbar-brand pl-3" href="#">Marina</a>
+                <button class="navbar-toggler outline-0 border-0" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor02">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active pr-3 mx-auto">
+                            <a class="nav-link btn" href="/Default.aspx">Home</a>
+                        </li>
+                        <li class="nav-item pr-3 mx-auto">
+                            <a class="nav-link btn" href="/Availability.aspx">Slips</a>
+                        </li>
+                        <li class="nav-item pr-3 mx-auto">
+                            <a class="nav-link btn" href="/Contact.aspx">Contact</a>
+                        </li>
+                        <li class="nav-item pr-3 mx-auto">
+                            <asp:Button ID="Button_Login" runat="server" CssClass="btn btn-outline-secondary" Text="Login" OnClick="Button_Login_Click" OnLoad="Button_Login_Load"></asp:Button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <div class="navbar-spacer"></div>
+
+        <div id="wrapper">
+
+            <asp:ContentPlaceHolder ID="content" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer-wrapper">
+            <div class="bg-light py-5">
+                <div class="row">
+                    <div class="col">
+                        <ul class="nav flex-column">
+                            <li class="nav-item mx-auto">
+                                <a class="nav-link" href="/Panel.aspx">Client Area</a>
+                            </li>
+                            <li class="nav-item mx-auto">
+                                <a class="nav-link" href="/Register.aspx">Register</a>
+                            </li>
+                            <li class="nav-item mx-auto">
+                                <a class="nav-link" href="https://github.com/EvanTucker96/Team7Marina/graphs/contributors">Group</a>
+                            </li>
+                            <li class="nav-item mx-auto">
+                                <a class="nav-link" href="https://github.com/EvanTucker96/Team7Marina">Github</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul class="nav flex-column">
+                            <li class="nav-item mx-auto">
+                                <a class="nav-link" href="/Default.aspx">Home</a>
+                            </li>
+                            <li class="nav-item mx-auto">
+                                <a class="nav-link" href="/Availability.aspx">Slips</a>
+                            </li>
+                            <li class="nav-item mx-auto">
+                                <a class="nav-link" href="/Contact.aspx">Contact</a>
+                            </li>
+                            <li class="nav-item mx-auto">
+                                <a class="nav-link" href="http://hackertyper.com/">Click this</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col mt-5 text-center">
+                        <small>Copyright &copy; 2020 Team Sheven. All rights reserved.</small>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </form>
+
+    <script src="../Scripts/jquery-3.4.1.slim.min.js"></script>
+    <script src="../Scripts/popper.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+</body>
+</html>
