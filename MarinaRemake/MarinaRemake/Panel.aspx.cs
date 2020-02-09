@@ -31,7 +31,6 @@ namespace MarinaRemake
                              select slip;
 
                 GridView1.DataSource = slips.Except(leased).ToList();
-                GridView1.AllowPaging = true;
                 GridView1.DataBind();
             }
         }

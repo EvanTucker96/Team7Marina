@@ -11,10 +11,12 @@
                 </div>
 
                 <div class="form-group">
-                    Name
+                    First Name
                         <asp:TextBox ID="TextBox_Name" CssClass="form-control" runat="server"></asp:TextBox>
+                    Last Name
+                        <asp:TextBox ID="TextBox_LName" CssClass="form-control" runat="server"></asp:TextBox>
                     Password
-                        <asp:TextBox ID="TextBox_Password" CssClass="form-control" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBox_Password" TextMode="Password" CssClass="form-control" runat="server"></asp:TextBox>
                 </div>
                 <asp:Button ID="Button_Submit" CssClass="btn btn-primary" Text="Login" runat="server" OnClick="Button_Submit_Click" />
                 <asp:Button ID="Button_Register" CssClass="btn btn-outline-secondary float-right" Text="Register" runat="server" OnClick="Button_Register_Click" />

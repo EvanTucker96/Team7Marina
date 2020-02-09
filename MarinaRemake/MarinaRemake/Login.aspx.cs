@@ -18,6 +18,7 @@ namespace MarinaRemake
             // Textbox inputs
             var inputName = TextBox_Name.Text;
             var inputPassword = Util.Encrypt(TextBox_Password.Text);
+            var inputLName = TextBox_LName.Text;
 
             // Create new marina context
             using (var context = new MarinaEntities())
@@ -25,7 +26,7 @@ namespace MarinaRemake
                 // Query context to see is passwords match
                 var query = from c
                             in context.Customers
-                            where c.Password == inputPassword
+                            where c.Password == inputPassword && c.FirstName == inputName && c.LastName == inputLName
                             select c;
 
                 // First response is our guy
