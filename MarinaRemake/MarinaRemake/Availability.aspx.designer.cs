@@ -132,13 +132,13 @@ namespace MarinaRemake
         protected global::System.Web.UI.WebControls.Label Label7;
 
         /// <summary>
-        /// DropDownList2 control.
+        /// txtDockName2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.TextBox txtDockName2;
 
         /// <summary>
         /// Label8 control.
