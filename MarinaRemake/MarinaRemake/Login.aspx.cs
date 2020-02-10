@@ -6,7 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using MarinaRemake.Data;
 using MarinaRemake.Utility;
-
+/// <summary>
+/// Login page created by Evan Tucker for Team 7's ASP.NET lab 2. This page takes in user input, then compares it to the information on the database.
+/// </summary>
 namespace MarinaRemake
 {
     public partial class WebForm1 : System.Web.UI.Page

@@ -7,6 +7,10 @@ using System.Web.UI.WebControls;
 using MarinaRemake.Data;
 using MarinaRemake.Utility;
 
+/// <summary>
+/// Register page created by Evan Tucker for Team7 ASP.NET Lab 2. This page takes the user information from the form, and inputs into the database/Data source
+/// </summary>
+
 namespace MarinaRemake.Views
 {
     public partial class WebForm1 : System.Web.UI.Page
