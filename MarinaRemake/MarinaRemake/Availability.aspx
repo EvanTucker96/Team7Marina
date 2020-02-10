@@ -20,15 +20,15 @@
                 </div>
                 <div class="form-group">
                     <asp:Label ID="Label5" runat="server" Text="Dock Name: "></asp:Label>
-                    <asp:TextBox ID="txtName" runat="server" Class="text-center form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtName" runat="server" Class="text-center form-control" ReadOnly="True"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <asp:Label ID="Label1" runat="server" Text="Width: "></asp:Label>
-                    <asp:TextBox ID="txtWidth" runat="server" Class="text-center form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtWidth" runat="server" Class="text-center form-control" ReadOnly="True"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <asp:Label ID="Label2" runat="server" Text="Length: "></asp:Label>
-                    <asp:TextBox ID="txtLength" runat="server" Class="text-center form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtLength" runat="server" Class="text-center form-control" ReadOnly="True"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <asp:Label ID="Label3" runat="server" Text="Water Service: "></asp:Label>
@@ -47,7 +47,7 @@
 
                 <div class="form-group">
                     <asp:Label ID="Label7" runat="server" Text="Dock Name: "></asp:Label>
-                    <asp:TextBox ID="txtDockName2" runat="server" Class="text-center form-control"></asp:TextBox>
+                    <asp:TextBox ID="txtDockName2" runat="server" Class="text-center form-control" ReadOnly="True"></asp:TextBox>
                 </div>
                 <div class="form-group">
                     <asp:Label ID="Label8" runat="server" Text="Water Services: "></asp:Label>

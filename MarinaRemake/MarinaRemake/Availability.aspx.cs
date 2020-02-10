@@ -43,8 +43,8 @@ namespace MarinaRemake
             dock = marina.Docks.Find(1);
             slippy = marina.Slips.Find(1);
             txtName.Text = dock.Name.ToString();
-            txtWidth.Text = slippy.Width.ToString();
-            txtLength.Text = slippy.Length.ToString();
+            txtWidth.Text = slippy.Width.ToString() + " feet";
+            txtLength.Text = slippy.Length.ToString() + " feet";
             water.Checked = dock.WaterService;
             electric.Checked = dock.ElectricalService;
 
@@ -87,8 +87,8 @@ namespace MarinaRemake
             dock = marina.Docks.Find(slippy.DockID);
             txtName.Text = dock.Name.ToString();
             txtDockName2.Text = dock.Name.ToString();
-            txtWidth.Text = slippy.Width.ToString();
-            txtLength.Text = slippy.Length.ToString();
+            txtWidth.Text = slippy.Width.ToString() + " feet";
+            txtLength.Text = slippy.Length.ToString() + " feet";
             water.Checked = dock.WaterService;
             electric.Checked = dock.ElectricalService;
             water2.Checked = dock.WaterService;
