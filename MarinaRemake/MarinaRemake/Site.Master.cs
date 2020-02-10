@@ -16,7 +16,7 @@ namespace MarinaRemake.Views
             {
                 var name = Session["CustomerName"].ToString().Split(' ');
 
-                Button_Login.Text = "@" + name[0] + ". " + name[1].Substring(0, 1);
+                Button_Login.Text = "Panel @" + name[0] + ". " + name[1].Substring(0, 1);
                 Button_Login.CssClass = "nav-link btn";
             }
         }

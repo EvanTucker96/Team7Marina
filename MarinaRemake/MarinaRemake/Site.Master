@@ -22,7 +22,7 @@
         <!-- Navigation -->
         <header id="nav-wrapper">
             <nav class="navbar navbar-expand-md navbar-light bg-light py-4 fixed-top" style="z-index: 1;">
-                <a class="navbar-brand pl-3" href="#">Marina</a>
+                <a class="navbar-brand pl-3" href="/Default.aspx">Marina</a>
                 <button class="navbar-toggler outline-0 border-0" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
