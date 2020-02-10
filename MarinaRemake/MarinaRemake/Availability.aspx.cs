@@ -6,6 +6,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using MarinaRemake.Data;
 
+// Steven Hillman
+// Availability page
+// displays available slips based on ID and show dock services available for different docks
+// Feb 2020
+
 namespace MarinaRemake
 {
     public partial class WebForm4 : System.Web.UI.Page
