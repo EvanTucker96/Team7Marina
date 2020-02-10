@@ -30,7 +30,10 @@ namespace MarinaRemake
                             select c;
 
                 // First response is our guy
-                customer = query.First();
+                if (query != null && query.First() != null)
+                    customer = query.First();
+                else 
+                    return;
 
                 // Reset form if failed
                 if (customer == null)
